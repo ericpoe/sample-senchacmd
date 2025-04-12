@@ -79,7 +79,7 @@
          *         // The file used to save sass variables edited via Sencha Inspector and Sencha Themer.
          *         // This file will automatically be applied to the end of the scss build.
          *         "var": "sass/save.scss",
-         *      
+         *
          *         // The directory used to save generated sass sources.
          *         // This directory will automatically be applied to the end of the scss build.
          *         "src": "sass/save"
@@ -295,7 +295,7 @@
     "production": {
         "output": {
             "appCache": {
-                "enable": false,
+                "enable": true,
                 "path": "cache.appcache"
             }
         },
@@ -306,7 +306,13 @@
             "enable": true
         },
         "compressor": {
-            "type": "yui"
+            "type": "closure",
+            "polyfills": "all"
+        },
+        "language": {
+            "js": {
+                "output": "ANY"
+            }
         }
     },
 
@@ -378,7 +384,7 @@
      *          "css": "${app.output.resources}/${app.name}-all.css",
      *          "js": {
      *              "path": "app.js",
-     *              // This setting constrols the output language level.  Set to 'ES6' to 
+     *              // This setting constrols the output language level.  Set to 'ES6' to
      *              // disable the transpiler
      *              "version": "ES5"
      *          },
